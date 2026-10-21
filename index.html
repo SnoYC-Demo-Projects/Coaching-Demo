@@ -94,6 +94,17 @@
     }
 
     html {
+      overflow-x: hidden;
+      width: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      overflow-x: clip;
+      width: 100%;
+    }
+
+    html {
       font-size: 16px;
       scroll-behavior: smooth;
       background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
@@ -111,6 +122,10 @@
       color: var(--ink-primary);
       position: relative;
       min-height: 100vh;
+    }
+
+    img, iframe, video {
+      max-width: 100%;
     }
 
     /* Accessibility focus states */
@@ -195,6 +210,7 @@
       transition: all 0.2s ease;
       line-height: 1;
       border: none;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -232,6 +248,7 @@
       color: #ffffff;
       border: 1px solid var(--brand-blue);
       box-shadow: 0 4px 12px rgba(0, 70, 190, 0.2);
+      white-space: nowrap;
     }
 
     .btn-whatsapp:hover {
@@ -372,6 +389,7 @@
       text-decoration: none;
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
     }
 
     .brand-name {
@@ -381,6 +399,7 @@
       letter-spacing: -0.03em;
       line-height: 1.1;
       color: var(--brand-blue);
+      white-space: nowrap;
     }
 
     .brand-subtitle {
@@ -390,13 +409,22 @@
       letter-spacing: 0.08em;
       color: var(--ink-tertiary);
       margin-top: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .top-bar nav {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.85rem;
+      gap: clamp(1rem, 1.8vw, 2.25rem);
       list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-link {
@@ -407,6 +435,9 @@
       padding: 0.35rem 0;
       position: relative;
       transition: color 0.2s ease;
+      white-space: nowrap;
+      display: inline-block;
+      line-height: 1.4;
     }
 
     .nav-link:hover {
@@ -429,23 +460,89 @@
       width: 100%;
     }
 
+    /* Link shown only inside mobile navigation drawer */
+    .nav-mobile-only {
+      display: none;
+    }
+
     .top-bar-cta {
       display: flex;
       align-items: center;
       gap: 1rem;
+      flex-shrink: 0;
     }
 
     .mobile-menu-btn {
       display: none;
+      align-items: center;
+      gap: 0.5rem;
       background: #ffffff;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
+      border: 1.5px solid var(--brand-blue-border);
+      border-radius: 10px;
       padding: 0.5rem 0.85rem;
       font-family: var(--font-sans);
       font-size: 0.875rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       color: var(--brand-blue);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+      min-height: 42px;
+    }
+
+    .mobile-menu-btn:hover {
+      background: var(--brand-blue-light);
+    }
+
+    .menu-icon-bars {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 16px;
+      height: 12px;
+    }
+
+    .menu-icon-bars span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: var(--brand-blue);
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-btn[aria-expanded="true"] .menu-icon-bars span:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    .mobile-menu-btn[aria-expanded="true"] .menu-icon-bars span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn[aria-expanded="true"] .menu-icon-bars span:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+
+    .mobile-nav-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      z-index: 99;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .mobile-nav-backdrop.active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
     }
 
     /* 2. HERO SECTION */
@@ -1660,7 +1757,21 @@
       }
     }
 
-    /* RESPONSIVE BREAKPOINTS */
+    /* ==========================================================================
+       RESPONSIVE DESIGN & MOBILE COMPATIBILITY SYSTEM
+       ========================================================================== */
+
+    /* Mobile Table Swipe Hint */
+    .mobile-table-hint {
+      display: none;
+    }
+
+    /* Mobile Sticky Bottom Bar */
+    .mobile-bottom-bar {
+      display: none;
+    }
+
+    /* Tablet breakpoint (960px) */
     @media (max-width: 960px) {
       .hero-grid,
       .why-layout,
@@ -1668,15 +1779,17 @@
       .faq-layout,
       .enquiry-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2.75rem;
       }
 
       .stats-ledger {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
       }
 
       .quotes-asymmetry {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
       .footer-grid {
@@ -1685,13 +1798,27 @@
       }
     }
 
-    @media (max-width: 768px) {
+    /* Navigation breakpoint (992px and below) */
+    @media (max-width: 992px) {
+      .top-bar {
+        padding-top: 0.85rem;
+        padding-bottom: 0.85rem;
+      }
+
+      .brand-name {
+        font-size: 1.35rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.6875rem;
+      }
+
       .nav-links {
         display: none;
       }
 
       .mobile-menu-btn {
-        display: inline-block;
+        display: inline-flex;
       }
 
       .nav-links.mobile-open {
@@ -1702,18 +1829,427 @@
         left: 0;
         right: 0;
         background-color: #ffffff;
-        border-bottom: 2px solid var(--brand-blue);
-        padding: 1.5rem;
-        gap: 1.25rem;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border-bottom: 3px solid var(--brand-blue);
+        padding: 1rem 1.15rem;
+        gap: 0.25rem;
+        box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+        z-index: 1000;
+        animation: mobileMenuSlide 0.2s ease-out;
       }
 
-      .form-row {
-        grid-template-columns: 1fr;
+      @keyframes mobileMenuSlide {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .nav-links.mobile-open .nav-link {
+        display: block;
+        padding: 0.85rem 1rem;
+        border-radius: 10px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--ink-primary);
+        border-bottom: 1px solid #f1f5f9;
+        transition: all 0.15s ease;
+      }
+
+      .nav-links.mobile-open .nav-link:hover,
+      .nav-links.mobile-open .nav-link:active {
+        background-color: var(--brand-blue-light);
+        color: var(--brand-blue);
+        padding-left: 1.25rem;
+      }
+
+      .nav-links.mobile-open .nav-mobile-only {
+        display: block;
+      }
+
+      .nav-links.mobile-open .nav-link-demo {
+        color: var(--brand-blue) !important;
+        font-weight: 800;
+        background-color: var(--brand-blue-light);
+      }
+
+      .top-bar-cta .btn-whatsapp {
+        padding: 0.55rem 0.95rem;
+        font-size: 0.8125rem;
+        border-radius: 9999px;
+      }
+    }
+
+    /* Mobile screens (768px and below) */
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 74px; /* Space for mobile sticky action bar */
+      }
+
+      .container {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
+      }
+
+      /* Sections Spacing */
+      .hero-section {
+        padding-top: 2.25rem;
+        padding-bottom: 3rem;
+      }
+
+      .why-section,
+      .batches-section,
+      .results-section,
+      .teacher-section,
+      .timetable-section,
+      .faq-section,
+      .enquiry-section {
+        padding-top: 3.25rem;
+        padding-bottom: 3.25rem;
+      }
+
+      .section-head {
+        margin-bottom: 1.75rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.85rem, 6.5vw, 2.35rem);
+      }
+
+      .section-subtext {
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      /* Hero Section */
+      .hero-eyebrow {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.75rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .hero-headline {
+        font-size: clamp(2.15rem, 8.5vw, 3.25rem);
+        line-height: 1.12;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-sentence {
+        font-size: 1.05rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.85rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.95rem 1.25rem;
+        font-size: 1rem;
+        min-height: 48px;
+      }
+
+      .hero-metadata {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+      }
+
+      /* Why Choose Us Cards */
+      .why-point-row {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem;
+        padding: 1.35rem 1.15rem;
+      }
+
+      .why-point-num {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+        border-radius: 10px;
+      }
+
+      .why-point-content h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .why-point-content p {
+        font-size: 0.95rem;
+      }
+
+      .why-manifesto {
+        padding: 1.35rem 1.15rem;
+        font-size: 1.0625rem;
+      }
+
+      /* Table Containers & Swipe Hint */
+      .mobile-table-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--brand-blue);
+        background: var(--brand-blue-light);
+        border: 1px solid var(--brand-blue-border);
+        padding: 0.35rem 0.85rem;
+        border-radius: 9999px;
+        margin-bottom: 0.75rem;
+      }
+
+      .table-container,
+      .timetable-wrapper {
+        border-radius: 12px;
+        margin-top: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .ledger-table th,
+      .ledger-table td,
+      .timetable-table th,
+      .timetable-table td {
+        padding: 0.9rem 0.85rem;
+      }
+
+      .table-link {
+        padding: 0.5rem 0.85rem;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .table-footnote,
+      .timetable-notes {
+        flex-direction: column;
+        gap: 0.4rem;
+        font-size: 0.8125rem;
+        padding: 0.9rem 1.15rem;
+      }
+
+      /* Stats & Quotes */
+      .results-header-row {
+        margin-bottom: 2rem;
+      }
+
+      .stamp-badge {
+        width: 100%;
+        max-width: 320px;
+        padding: 0.75rem 1rem;
+        transform: none;
+      }
+
+      .stat-cell {
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.75rem;
+      }
+
+      .quote-lead {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .quote-lead-text {
+        font-size: 1.15rem;
+        margin-top: 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .quote-small {
+        padding: 1.35rem 1.25rem;
+      }
+
+      /* Meet The Teacher */
+      .teacher-profile {
+        padding: 1.6rem 1.25rem;
+      }
+
+      .teacher-profile h2 {
+        font-size: 2rem;
       }
 
       .teacher-credentials {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.15rem;
+      }
+
+      .teacher-note {
+        padding: 1.15rem 1.25rem;
+        font-size: 1.05rem;
+      }
+
+      /* FAQ */
+      .faq-list {
+        gap: 0.75rem;
+      }
+
+      .faq-summary {
+        padding: 1.15rem 1.15rem;
+        font-size: 1rem;
+      }
+
+      .faq-answer {
+        padding: 0 1.15rem 1.15rem;
+        font-size: 0.95rem;
+      }
+
+      /* Enquiry Form */
+      .enquiry-card {
+        padding: 1.65rem 1.15rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        font-size: 16px; /* Prevents iOS auto-zoom on input focus */
+        padding: 0.85rem 1rem;
+        min-height: 48px;
+      }
+
+      .btn-big-wa {
+        padding: 1.05rem 1.25rem;
+        font-size: 1rem;
+        min-height: 48px;
+      }
+
+      .location-details {
+        padding: 1.5rem 1.15rem;
+      }
+
+      .map-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 0.75rem 1rem;
+      }
+
+      .map-directions-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.45rem 0.85rem;
+      }
+
+      .map-iframe-container {
+        height: 230px;
+      }
+
+      .map-footer-caption {
+        padding: 0.65rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      /* Footer */
+      .site-footer {
+        padding-top: 2.75rem;
+        padding-bottom: 2rem;
+      }
+
+      .footer-grid {
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+
+      /* Mobile Sticky Bottom Bar */
+      .mobile-bottom-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+        padding: 0.65rem 0.85rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+        gap: 0.55rem;
+      }
+
+      .mobile-bar-btn {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        padding: 0.75rem 0.4rem;
+        border-radius: 10px;
+        font-family: var(--font-sans);
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-decoration: none;
+        line-height: 1;
+        min-height: 44px;
+        transition: transform 0.15s ease, background-color 0.15s ease;
+      }
+
+      .mobile-call-btn {
+        background: #f1f5f9;
+        color: var(--brand-blue);
+        border: 1px solid #cbd5e1;
+      }
+
+      .mobile-whatsapp-btn {
+        background: #25D366;
+        color: #ffffff;
+        border: 1px solid #20ba5a;
+        box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+      }
+
+      .mobile-demo-btn {
+        background: var(--brand-blue);
+        color: #ffffff;
+        border: 1px solid var(--brand-blue);
+        box-shadow: 0 2px 8px rgba(0, 70, 190, 0.25);
+      }
+    }
+
+    /* Small mobile devices (480px and below) */
+    @media (max-width: 480px) {
+      .brand-name {
+        font-size: 1.25rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.65rem;
+      }
+
+      .top-bar-cta {
+        display: none; /* Hide top CTA on very small screens, bottom bar takes over */
+      }
+
+      .pitch-notice {
+        font-size: 0.72rem;
+        padding: 0.35rem 0.5rem;
+      }
+
+      .hero-headline {
+        font-size: 2.15rem;
+      }
+
+      .stat-number {
+        font-size: 2.35rem;
       }
     }
   </style>
@@ -1734,12 +2270,20 @@
       </a>
 
       <nav aria-label="Main Navigation">
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mainNavLinks">Menu &darr;</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mainNavLinks" aria-label="Toggle navigation menu">
+          <span class="menu-icon-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="menu-btn-text">Menu</span>
+        </button>
         <ul class="nav-links" id="mainNavLinks">
           <li><a href="#why-us" class="nav-link">Why Parents Choose Us</a></li>
           <li><a href="#batches" class="nav-link">Courses &amp; Batches</a></li>
           <li><a href="#results" class="nav-link">Results</a></li>
           <li><a href="#timetable" class="nav-link">Timetable &amp; FAQ</a></li>
+          <li class="nav-mobile-only"><a href="#enquiry" class="nav-link nav-link-demo">Book a Free Demo Class &rarr;</a></li>
         </ul>
       </nav>
 
@@ -1750,6 +2294,9 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" aria-hidden="true"></div>
 
   <main>
     <!-- 2. HERO SECTION -->
@@ -1867,6 +2414,10 @@
           <p class="section-subtext">
             Morning and evening batches scheduled comfortably around school timings of local Kothrud, Karve Nagar, and Deccan schools.
           </p>
+        </div>
+
+        <div class="mobile-table-hint">
+          <span class="swipe-icon">&harr;</span> Swipe horizontally to view full schedule &amp; fees
         </div>
 
         <div class="table-container">
@@ -2092,6 +2643,10 @@
           <p class="section-subtext">
             Designed like a traditional school ledger. Balanced hours ensure school work and self-study are never compromised.
           </p>
+        </div>
+
+        <div class="mobile-table-hint">
+          <span class="swipe-icon">&harr;</span> Swipe horizontally to view all days (Mon&ndash;Sun)
         </div>
 
         <div class="timetable-wrapper">
@@ -2466,27 +3021,70 @@
     </div>
   </footer>
 
+  <!-- MOBILE STICKY BOTTOM BAR (Visible on screens <= 768px) -->
+  <aside class="mobile-bottom-bar" aria-label="Mobile quick actions">
+    <a href="tel:+919822012345" class="mobile-bar-btn mobile-call-btn" id="mobileCallBtn" aria-label="Call Sachin Sir">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>Call Sir</span>
+    </a>
+    <a href="https://wa.me/919822012345?text=Hello%20Sachin%20Sir%2C%20I%20would%20like%20to%20know%20about%20Class%208-10%20batches." class="mobile-bar-btn mobile-whatsapp-btn" target="_blank" rel="noopener noreferrer" id="mobileWhatsappBtn" aria-label="WhatsApp Sachin Sir">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.075-1.01-.044-.221-.07-.49-.168-.86-.334-1.572-.705-2.589-2.29-2.668-2.395-.078-.106-.637-.849-.637-1.621 0-.771.405-1.15.549-1.307.144-.157.314-.197.419-.197.105 0 .21.002.302.007.097.004.227-.037.354.269.131.314.445 1.084.484 1.163.039.079.066.171.013.277-.052.105-.078.17-.157.262-.078.092-.165.205-.236.275-.079.079-.162.164-.07.322.092.157.408.673.875 1.088.6.534 1.106.7 1.263.779.157.079.25.066.342-.039.092-.105.394-.459.499-.616.105-.157.21-.131.354-.079.144.053.918.433 1.075.512.157.079.262.118.302.184.039.065.039.38-.105.785z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#enquiry" class="mobile-bar-btn mobile-demo-btn" id="mobileDemoStickyBtn">
+      <span>Book Demo &rarr;</span>
+    </a>
+  </aside>
+
   <!-- MINIMAL JAVASCRIPT: ACCESSIBILITY, FORM TO WHATSAPP & SCROLL OBSERVER -->
   <script>
-    // 1. Mobile menu toggle
+    // 1. Mobile menu toggle with backdrop and body lock
     const menuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('mainNavLinks');
+    const navBackdrop = document.getElementById('mobileNavBackdrop');
+
+    function toggleMobileMenu(open) {
+      if (!menuBtn || !navLinks) return;
+      const willOpen = open !== undefined ? open : menuBtn.getAttribute('aria-expanded') !== 'true';
+      menuBtn.setAttribute('aria-expanded', willOpen);
+      if (willOpen) {
+        navLinks.classList.add('mobile-open');
+        if (navBackdrop) navBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        navLinks.classList.remove('mobile-open');
+        if (navBackdrop) navBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
 
     if (menuBtn && navLinks) {
-      menuBtn.addEventListener('click', () => {
-        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        menuBtn.setAttribute('aria-expanded', !isExpanded);
-        navLinks.classList.toggle('mobile-open');
-        menuBtn.innerHTML = !isExpanded ? 'Close &times;' : 'Menu &darr;';
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
       });
+
+      if (navBackdrop) {
+        navBackdrop.addEventListener('click', () => toggleMobileMenu(false));
+      }
 
       // Close menu when a link is clicked
       navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('mobile-open');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.innerHTML = 'Menu &darr;';
-        });
+        link.addEventListener('click', () => toggleMobileMenu(false));
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
+          toggleMobileMenu(false);
+        }
+      });
+
+      // Auto close on desktop resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 992 && navLinks.classList.contains('mobile-open')) {
+          toggleMobileMenu(false);
+        }
       });
     }
 
