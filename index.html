@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnoYC Classes | Class 8–10 Maths & Science Tuition in Kothrud, Pune</title>
+  <meta name="description" content="Small batches of 15 students for Class 8, 9, and 10 CBSE & Maharashtra State Board Maths and Science in Kothrud, Pune. Personal attention, weekly tests, and honest teaching since 2011.">
+  
+  <!-- Typography: Inter (Primary & Headings), Kalam (Handwritten notes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM: CLEAN, WARM & PROFESSIONAL EDUCATIONAL PLATFORM
+       Color Specifications:
+         1. Background: Soft gradient #fffcf5 to #fff6e6
+         2. Typography: Modern sans-serif stack ('Inter', system-ui, -apple-system, sans-serif)
+            with high-contrast dark charcoal text (#1a1a1a) for body paragraphs
+         3. Brand & Headings: Bold professional royal blue (#0046be) for main headings,
+            logo accents, primary navigation highlights, and major call-to-action buttons
+         4. Cards & Containers: Clean white background (#ffffff), rounded corners (border-radius: 16px),
+            and soft subtle drop shadow (box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05))
+         5. Accents & Badges: Vibrant accent colors like energetic orange (#ff6b00) for
+            notification/new tags, and bright cyan/golden tones for highlights
+       ========================================================================== */
+
+    :root {
+      /* Background Gradient */
+      --bg-gradient-start: #fffcf5;
+      --bg-gradient-end: #fff6e6;
+      --bg-page: #fff9f0;
+      --bg-card: #ffffff;
+      --bg-card-subtle: #f9fbfd;
+      --bg-note: #fffbf2;
+
+      /* High-contrast dark charcoal text for body paragraphs */
+      --ink-primary: #1a1a1a;
+      --ink-secondary: #404040;
+      --ink-tertiary: #666666;
+
+      /* Bold, professional royal blue for brand, headings & primary actions */
+      --brand-blue: #0046be;
+      --brand-blue-hover: #003699;
+      --brand-blue-light: #eef4ff;
+      --brand-blue-border: #bfdbfe;
+
+      /* Accent alias pointing to royal blue for consistency */
+      --accent: #0046be;
+      --accent-hover: #003699;
+      --accent-light: #eef4ff;
+      --accent-border: #bfdbfe;
+
+      /* Vibrant Accents & Badges */
+      --accent-orange: #ff6b00;
+      --accent-orange-hover: #e05e00;
+      --accent-orange-light: #fff2e8;
+      --accent-orange-border: #ffcca3;
+
+      --accent-cyan: #0284c7;
+      --accent-cyan-light: #e0f2fe;
+      --accent-cyan-border: #bae6fd;
+
+      --accent-gold: #d97706;
+      --accent-gold-light: #fef3c7;
+      --accent-gold-border: #fde68a;
+
+      /* Subtle Dividers and card borders */
+      --ledger-line: rgba(0, 0, 0, 0.07);
+      --ledger-line-strong: rgba(0, 0, 0, 0.12);
+      --border-card: rgba(0, 0, 0, 0.06);
+
+      /* Typography: Modern sans-serif stack */
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-hand: 'Kalam', cursive;
+      --site-width: 1180px;
+
+      /* Cards & Containers specifications */
+      --card-radius: 16px;
+      --card-radius-sm: 10px;
+      --card-radius-lg: 20px;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --card-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --card-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.09);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      color: var(--ink-primary);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      background-attachment: fixed;
+      color: var(--ink-primary);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Accessibility focus states */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 3px;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--site-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Section Headings */
+    .section-head {
+      margin-bottom: 2.75rem;
+    }
+
+    .section-num {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+      background-color: var(--brand-blue-light);
+      border: 1px solid var(--brand-blue-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: var(--brand-blue);
+      margin-top: 0.25rem;
+    }
+
+    .section-subtext {
+      font-size: 1.125rem;
+      color: var(--ink-secondary);
+      max-width: 640px;
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* Buttons: Royal blue CTAs with rounded corners */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.85rem 1.6rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-blue);
+      color: #ffffff;
+      border: 1px solid var(--brand-blue);
+      box-shadow: 0 4px 14px rgba(0, 70, 190, 0.25);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-blue-hover);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 70, 190, 0.35);
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background-color: #ffffff;
+      color: var(--brand-blue);
+      border: 2px solid var(--brand-blue);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--brand-blue-light);
+      color: var(--brand-blue-hover);
+      border-color: var(--brand-blue-hover);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--brand-blue);
+      color: #ffffff;
+      border: 1px solid var(--brand-blue);
+      box-shadow: 0 4px 12px rgba(0, 70, 190, 0.2);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--brand-blue-hover);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 70, 190, 0.3);
+      text-decoration: none;
+    }
+
+    /* Photo & Map Placeholders: Clean white cards */
+    .photo-placeholder {
+      background-color: var(--bg-card);
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--card-radius);
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--card-shadow);
+    }
+
+    .photo-tag {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-blue);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      font-weight: 700;
+      background: var(--brand-blue-light);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+    }
+
+    .photo-caption {
+      font-size: 0.9375rem;
+      color: var(--ink-secondary);
+      font-style: italic;
+      max-width: 340px;
+      line-height: 1.5;
+    }
+
+    /* Teacher handwritten note */
+    .teacher-note {
+      font-family: var(--font-hand);
+      font-size: 1.15rem;
+      line-height: 1.45;
+      color: var(--ink-primary);
+      background-color: var(--bg-note);
+      padding: 1.35rem 1.6rem;
+      border-radius: var(--card-radius);
+      border-left: 4px solid var(--accent-orange);
+      box-shadow: var(--card-shadow);
+      border-top: 1px solid rgba(255, 107, 0, 0.15);
+      border-right: 1px solid rgba(255, 107, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 107, 0, 0.15);
+    }
+
+    /* Stamp Badge with vibrant orange */
+    .stamp-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid var(--accent-orange);
+      padding: 0.85rem 1.35rem;
+      text-align: center;
+      color: var(--brand-blue);
+      border-radius: var(--card-radius);
+      background-color: #ffffff;
+      box-shadow: 0 4px 16px rgba(255, 107, 0, 0.12);
+    }
+
+    .stamp-badge-title {
+      font-size: 0.875rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      display: block;
+      line-height: 1.2;
+      color: var(--accent-orange);
+    }
+
+    .stamp-badge-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      display: block;
+      color: var(--brand-blue);
+      margin-top: 3px;
+    }
+
+    /* 1. TOP BAR */
+    .pitch-notice {
+      background-color: #ffffff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 0.8125rem;
+      color: var(--ink-secondary);
+      padding: 0.5rem 1rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .pitch-notice strong {
+      color: var(--accent-orange);
+      background: var(--accent-orange-light);
+      padding: 0.15rem 0.55rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      margin-right: 0.35rem;
+      border: 1px solid var(--accent-orange-border);
+    }
+
+    .top-bar {
+      border-bottom: 1px solid rgba(0, 70, 190, 0.08);
+      padding-top: 1.15rem;
+      padding-bottom: 1.15rem;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .top-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-sans);
+      font-size: 1.625rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--brand-blue);
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-tertiary);
+      margin-top: 0.25rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.85rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      text-decoration: none;
+      padding: 0.35rem 0;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--brand-blue);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      border-radius: 2px;
+      background-color: var(--brand-blue);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .top-bar-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 0.5rem 0.85rem;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--brand-blue);
+    }
+
+    /* 2. HERO SECTION */
+    .hero-section {
+      padding-top: 4.75rem;
+      padding-bottom: 4.75rem;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-blue);
+      background-color: var(--brand-blue-light);
+      border: 1px solid var(--brand-blue-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 0.95rem;
+      border-radius: 9999px;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-eyebrow::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-orange);
+    }
+
+    .hero-headline {
+      font-family: var(--font-sans);
+      font-size: clamp(2.5rem, 5vw, 4.15rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      color: var(--brand-blue);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Hand-drawn SVG underline with energetic orange highlight */
+    .hand-drawn-word {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      color: var(--accent-orange);
+    }
+
+    .hand-drawn-svg {
+      position: absolute;
+      left: -4%;
+      bottom: -6px;
+      width: 108%;
+      height: 14px;
+      pointer-events: none;
+      color: var(--accent-orange);
+    }
+
+    .hero-sentence {
+      font-size: 1.2rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+      margin-bottom: 2rem;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-metadata {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.25rem;
+    }
+
+    .hero-metadata span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-metadata span::before {
+      content: "•";
+      color: var(--accent-orange);
+      font-weight: bold;
+    }
+
+    .hero-metadata span:first-child::before {
+      display: none;
+    }
+
+    /* Hero right photo frame: Clean white card container */
+    .hero-visual-frame {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    .hero-photo-frame {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      padding: 0.85rem;
+      box-shadow: var(--card-shadow);
+      margin: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hero-photo-frame:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background-color: #0f172a;
+      aspect-ratio: 16 / 10;
+    }
+
+    .hero-actual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-stamp-overlay {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background-color: var(--accent-orange);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-photo-caption {
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      padding: 0.75rem 0.25rem 0.2rem;
+      line-height: 1.45;
+    }
+
+    .hero-photo-caption strong {
+      color: var(--brand-blue);
+      font-weight: 700;
+      margin-right: 0.35rem;
+    }
+
+    /* 3. WHY PARENTS CHOOSE US */
+    .why-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .why-aside {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .why-manifesto {
+      font-family: var(--font-sans);
+      font-size: 1.2rem;
+      line-height: 1.65;
+      font-weight: 500;
+      color: var(--brand-blue);
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--brand-blue);
+      padding: 1.85rem;
+      box-shadow: var(--card-shadow);
+      margin-top: 0.5rem;
+    }
+
+    .why-points-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Point rows as clean white cards */
+    .why-point-row {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      padding: 1.85rem 2rem;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.5rem;
+      align-items: flex-start;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .why-point-row:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .why-point-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--brand-blue-light);
+      color: var(--brand-blue);
+      border: 1px solid var(--brand-blue-border);
+      font-family: var(--font-sans);
+      font-size: 1.125rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .why-point-content h3 {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-point-content p {
+      font-size: 1rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    /* 4. COURSES & BATCHES: Card Container */
+    .batches-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 2rem;
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+    }
+
+    .ledger-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9375rem;
+      min-width: 720px;
+    }
+
+    .ledger-table th {
+      background-color: #f8fafc;
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-blue);
+      padding: 1.15rem 1.25rem;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+
+    .ledger-table td {
+      padding: 1.2rem 1.25rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: var(--ink-primary);
+      vertical-align: middle;
+    }
+
+    .ledger-table tbody tr:hover {
+      background-color: rgba(0, 70, 190, 0.02);
+    }
+
+    .class-tag {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      display: block;
+      color: var(--brand-blue);
+    }
+
+    .board-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-tertiary);
+    }
+
+    .batch-fee {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 1.125rem;
+      color: var(--brand-blue);
+      white-space: nowrap;
+    }
+
+    /* Badges & Pills */
+    .seats-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      border: 1px solid var(--accent-cyan-border);
+      background-color: var(--accent-cyan-light);
+      color: var(--accent-cyan);
+      white-space: nowrap;
+    }
+
+    .seats-pill.urgent {
+      border-color: var(--accent-orange-border);
+      color: var(--accent-orange);
+      background-color: var(--accent-orange-light);
+    }
+
+    .seats-pill.full {
+      border-color: #e5e7eb;
+      color: #6b7280;
+      background-color: #f3f4f6;
+    }
+
+    .table-link {
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--brand-blue);
+      text-decoration: none;
+      background-color: var(--brand-blue-light);
+      padding: 0.45rem 0.95rem;
+      border-radius: 8px;
+      display: inline-block;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .table-link:hover {
+      background-color: var(--brand-blue);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .table-footnote {
+      padding: 1.1rem 1.25rem;
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    /* 5. RESULTS */
+    .results-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .results-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stats-ledger {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .stat-cell {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      padding: 2.25rem 2rem;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stat-cell:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .stat-number {
+      font-family: var(--font-sans);
+      font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--brand-blue);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.75rem;
+    }
+
+    .stat-label {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
+    }
+
+    .stat-sub {
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      line-height: 1.45;
+    }
+
+    /* Quotes: Asymmetrical white cards */
+    .quotes-asymmetry {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+    }
+
+    .quote-lead {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--brand-blue);
+      box-shadow: var(--card-shadow);
+      padding: 2.5rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-lead-text {
+      font-family: var(--font-sans);
+      font-size: 1.35rem;
+      line-height: 1.55;
+      font-weight: 500;
+      color: var(--ink-primary);
+      margin-top: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .quote-attribution {
+      font-size: 0.9375rem;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.25rem;
+      color: var(--ink-secondary);
+    }
+
+    .quote-attribution strong {
+      color: var(--brand-blue);
+      display: block;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .quote-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .quote-small {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--accent-orange);
+      box-shadow: var(--card-shadow);
+      padding: 1.75rem 2rem;
+    }
+
+    .quote-small-text {
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      color: var(--ink-primary);
+      margin-top: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .sample-badge-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background-color: var(--accent-orange-light);
+      border: 1px solid var(--accent-orange-border);
+      border-radius: 9999px;
+      padding: 0.2rem 0.65rem;
+      color: var(--accent-orange);
+    }
+
+    /* 6. MEET THE TEACHER */
+    .teacher-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .teacher-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .teacher-frame {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .teacher-photo-frame {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      padding: 0.85rem;
+      box-shadow: var(--card-shadow);
+      margin: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .teacher-photo-frame:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .teacher-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background-color: #0f172a;
+      aspect-ratio: 16 / 10;
+    }
+
+    .teacher-actual-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .teacher-photo-caption {
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      padding: 0.75rem 0.25rem 0.2rem;
+      line-height: 1.45;
+    }
+
+    .teacher-photo-caption strong {
+      color: var(--brand-blue);
+      font-weight: 700;
+      margin-right: 0.35rem;
+    }
+
+    .teacher-profile {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      padding: 2.75rem;
+    }
+
+    .teacher-profile h2 {
+      font-family: var(--font-sans);
+      font-size: clamp(2.25rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      color: var(--brand-blue);
+      line-height: 1.2;
+      margin-top: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .teacher-role {
+      font-family: var(--font-sans);
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--accent-orange);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .teacher-bio {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: var(--ink-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .teacher-credentials {
+      background-color: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .cred-item-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-blue);
+      margin-bottom: 0.35rem;
+    }
+
+    .cred-item-value {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink-primary);
+      line-height: 1.45;
+    }
+
+    /* 7. WEEKLY TIMETABLE */
+    .timetable-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .timetable-wrapper {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      overflow-x: auto;
+      margin-top: 2rem;
+    }
+
+    .timetable-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.9375rem;
+    }
+
+    .timetable-table th {
+      background-color: #f8fafc;
+      border-bottom: 2px solid #e2e8f0;
+      border-right: 1px solid #f1f5f9;
+      padding: 1.1rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-blue);
+      text-align: center;
+    }
+
+    .timetable-table th:first-child {
+      text-align: left;
+      min-width: 160px;
+    }
+
+    .timetable-table td {
+      border-bottom: 1px solid #f1f5f9;
+      border-right: 1px solid #f1f5f9;
+      padding: 1.1rem 0.9rem;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+    }
+
+    .timetable-table td:first-child {
+      text-align: left;
+      font-weight: 700;
+      color: var(--brand-blue);
+      background-color: #fcfdfe;
+    }
+
+    .tt-subject {
+      display: block;
+      font-weight: 700;
+      color: var(--ink-primary);
+      font-size: 0.9375rem;
+      line-height: 1.3;
+    }
+
+    .tt-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      background-color: var(--brand-blue-light);
+      color: var(--brand-blue);
+      border-radius: 6px;
+      margin-top: 5px;
+      border: 1px solid var(--brand-blue-border);
+    }
+
+    .tt-special {
+      background-color: #fff9f0;
+      border-left: 3px solid var(--accent-orange);
+    }
+
+    .timetable-notes {
+      padding: 1.1rem 1.5rem;
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    /* 8. FAQ */
+    .faq-section {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .faq-summary {
+      list-style: none;
+      padding: 1.35rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      line-height: 1.4;
+      transition: color 0.2s ease;
+    }
+
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-summary:hover {
+      color: var(--brand-blue-hover);
+    }
+
+    .faq-toggle-icon {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1;
+      color: var(--brand-blue);
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--brand-blue-border);
+      background-color: var(--brand-blue-light);
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .faq-item[open] .faq-toggle-icon {
+      transform: rotate(45deg);
+      background-color: var(--brand-blue);
+      color: #ffffff;
+      border-color: var(--brand-blue);
+    }
+
+    .faq-answer {
+      padding: 0 1.75rem 1.5rem;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+    }
+
+    .faq-answer p + p {
+      margin-top: 0.75rem;
+    }
+
+    /* 9. ENQUIRY & LOCATION */
+    .enquiry-section {
+      padding-top: 5rem;
+      padding-bottom: 5.5rem;
+    }
+
+    .enquiry-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .enquiry-card {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      padding: 2.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--brand-blue);
+      margin-bottom: 0.45rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 1.0625rem;
+      color: var(--ink-primary);
+      background-color: #ffffff;
+      border: 1.5px solid #d1d5db;
+      padding: 0.85rem 1.1rem;
+      border-radius: 12px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--brand-blue);
+      box-shadow: 0 0 0 3px rgba(0, 70, 190, 0.15);
+      outline: none;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .form-actions {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-big-wa {
+      width: 100%;
+      padding: 1.1rem 1.5rem;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      background-color: var(--brand-blue);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 14px rgba(0, 70, 190, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-big-wa:hover {
+      background-color: var(--brand-blue-hover);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(0, 70, 190, 0.4);
+      text-decoration: none;
+    }
+
+    .form-hint {
+      font-size: 0.8125rem;
+      color: var(--ink-tertiary);
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    /* Location & Map box */
+    .location-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .location-details {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      padding: 2.25rem;
+    }
+
+    .location-item {
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .location-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .loc-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-blue);
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .loc-text {
+      font-size: 1rem;
+      color: var(--ink-primary);
+      line-height: 1.55;
+    }
+
+    .loc-text strong {
+      color: var(--brand-blue);
+    }
+
+    /* Interactive Map Card */
+    .map-card-wrapper {
+      background-color: var(--bg-card);
+      border-radius: var(--card-radius);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .map-card-wrapper:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .map-header {
+      background-color: #f8fafc;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e2e8f0;
+      gap: 0.75rem;
+    }
+
+    .map-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .map-badge {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--accent-orange);
+      background-color: var(--accent-orange-light);
+      border: 1px solid var(--accent-orange-border);
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .map-address-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+    }
+
+    .map-directions-btn {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--brand-blue);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      background-color: var(--brand-blue-light);
+      border-radius: 8px;
+      border: 1px solid var(--brand-blue-border);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .map-directions-btn:hover {
+      background-color: var(--brand-blue);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .map-iframe-container {
+      width: 100%;
+      height: 280px;
+      position: relative;
+      background-color: #e2e8f0;
+    }
+
+    .map-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .map-footer-caption {
+      background-color: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.8125rem;
+      color: var(--ink-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .map-footer-caption strong {
+      color: var(--brand-blue);
+    }
+
+    .map-coords {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      color: var(--ink-tertiary);
+      font-size: 0.75rem;
+    }
+
+    /* 10. FOOTER */
+    .site-footer {
+      background-color: #ffffff;
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.02);
+      padding-top: 3.5rem;
+      padding-bottom: 2.5rem;
+      font-size: 0.9375rem;
+      color: var(--ink-secondary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-sans);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--brand-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links-list a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--brand-blue);
+      text-decoration: underline;
+    }
+
+    .sample-disclaimer {
+      background-color: #fff9f0;
+      border: 1px solid #fed7aa;
+      border-radius: 12px;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--ink-secondary);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .agency-credit a {
+      font-weight: 700;
+      color: var(--brand-blue);
+      text-decoration: none;
+    }
+
+    .agency-credit a:hover {
+      text-decoration: underline;
+    }
+
+    /* Scroll reveal progressive enhancement */
+    .fade-in-on-scroll {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js-observer-ready .fade-in-on-scroll {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .js-observer-ready .fade-in-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media print {
+      .fade-in-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .why-layout,
+      .teacher-grid,
+      .faq-layout,
+      .enquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .stats-ledger {
+        grid-template-columns: 1fr;
+      }
+
+      .quotes-asymmetry {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-block;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border-bottom: 2px solid var(--brand-blue);
+        padding: 1.5rem;
+        gap: 1.25rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .teacher-credentials {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PITCH & DEMONSTRATION NOTICE -->
+  <div class="pitch-notice">
+    <strong>Sample Website for Client Demonstration</strong> &bull; SnoYC Tuition &amp; Coaching Sample &bull; Kothrud, Pune
+  </div>
+
+  <!-- 1. TOP BAR -->
+  <header class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="#" class="brand" aria-label="SnoYC Classes Home">
+        <span class="brand-name">SnoYC Classes</span>
+        <span class="brand-subtitle">Maths &amp; Science &bull; Kothrud, Pune</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mainNavLinks">Menu &darr;</button>
+        <ul class="nav-links" id="mainNavLinks">
+          <li><a href="#why-us" class="nav-link">Why Parents Choose Us</a></li>
+          <li><a href="#batches" class="nav-link">Courses &amp; Batches</a></li>
+          <li><a href="#results" class="nav-link">Results</a></li>
+          <li><a href="#timetable" class="nav-link">Timetable &amp; FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-bar-cta">
+        <a href="https://wa.me/919822012345?text=Hello%2C%20I%20would%20like%20to%20know%20about%20the%20batches." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" id="topWhatsappBtn">
+          WhatsApp us &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text-block">
+          <div class="hero-eyebrow">Class 8, 9 &amp; 10 &bull; CBSE &amp; Maharashtra Board</div>
+          
+          <h1 class="hero-headline">
+            Small batches.<br>
+            Honest teaching.<br>
+            <span class="hand-drawn-word">
+              Better marks.
+              <!-- Hand-drawn SVG underline -->
+              <svg class="hand-drawn-svg" viewBox="0 0 280 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 14C65 4 155 16 274 7C215 17 95 14 22 15" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </h1>
+
+          <p class="hero-sentence">
+            Class 8, 9 and 10 Maths and Science tuition in Kothrud, taught the old-fashioned way on a real board.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#enquiry" class="btn btn-primary" id="heroDemoBtn">Book a free demo class &rarr;</a>
+            <a href="#batches" class="btn btn-outline">See batches &amp; fees &darr;</a>
+          </div>
+
+          <div class="hero-metadata">
+            <span>Teaching in Kothrud since 2011</span>
+            <span>Over 680 students taught</span>
+            <span>Strictly 15 students per batch</span>
+          </div>
+        </div>
+
+        <div class="hero-visual-frame">
+          <figure class="hero-photo-frame">
+            <div class="hero-img-wrapper">
+              <img src="classroom.jpg" alt="Sachin Sir conducting a small-batch lecture at SnoYC Classes, Kothrud" class="hero-actual-img" width="600" height="375" loading="eager">
+              <span class="photo-stamp-overlay">Kothrud Classroom &bull; Max 15</span>
+            </div>
+            <figcaption class="hero-photo-caption">
+              <strong>In Session:</strong> A real evening batch taking notes and working through numericals at our Karve Road centre.
+            </figcaption>
+          </figure>
+
+          <aside class="teacher-note" aria-label="A note from the teacher">
+            &ldquo;Parents often ask: &lsquo;Will my child get personal attention?&rsquo; When there are only 15 chairs in the room, there is nowhere to hide. Every doubt gets cleared before we pack up.&rdquo; &mdash; S. G. Kulkarni
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. WHY PARENTS CHOOSE US -->
+    <section class="why-section fade-in-on-scroll" id="why-us">
+      <div class="container why-layout">
+        <div class="why-aside">
+          <div>
+            <span class="section-num">&sect; 01 &bull; Teaching Philosophy</span>
+            <h2 class="section-title">Why parents choose us over big coaching classes.</h2>
+            <p class="section-subtext">
+              We do not run an assembly line. Education works when the teacher knows each child by their name, their handwriting, and their weakest chapter.
+            </p>
+          </div>
+
+          <div class="why-manifesto">
+            &ldquo;If a student doesn&rsquo;t understand a step in geometry, an app notification won&rsquo;t help them. A teacher sitting across the table will.&rdquo;
+          </div>
+        </div>
+
+        <div class="why-points-stack">
+          <!-- Point 1 -->
+          <article class="why-point-row">
+            <div class="why-point-num">01</div>
+            <div class="why-point-content">
+              <h3>We cap every batch at 15 students so no child gets lost in the crowd.</h3>
+              <p>
+                In large commercial institutes in Kothrud with 50 or 60 students per batch, quiet children sit in the back and nod along. Here, the teacher checks every single notebook before class ends. If a student is stuck on a step, we catch it on the spot.
+              </p>
+            </div>
+          </article>
+
+          <!-- Point 2 -->
+          <article class="why-point-row">
+            <div class="why-point-num">02</div>
+            <div class="why-point-content">
+              <h3>Weekly written tests on Sundays, marked and returned by Wednesday.</h3>
+              <p>
+                Board exams are written with pen on paper, not tapped on a mobile screen. Every second Sunday, students write a full-format test. Every test is step-marked with red pen corrections so students know exactly where they lose marks.
+              </p>
+            </div>
+          </article>
+
+          <!-- Point 3 -->
+          <article class="why-point-row">
+            <div class="why-point-num">03</div>
+            <div class="why-point-content">
+              <h3>Direct phone calls with the teacher, not an admissions counselor.</h3>
+              <p>
+                When parents call with a concern about homework, test scores, or school unit tests, you talk directly to Sachin Sir. No receptionist, no tele-calling executives, and no corporate delays.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COURSES AND BATCHES (REAL TABLE) -->
+    <section class="batches-section fade-in-on-scroll" id="batches">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">&sect; 02 &bull; Batches &amp; Fees</span>
+          <h2 class="section-title">Courses and batch schedule for 2026&ndash;27</h2>
+          <p class="section-subtext">
+            Morning and evening batches scheduled comfortably around school timings of local Kothrud, Karve Nagar, and Deccan schools.
+          </p>
+        </div>
+
+        <div class="table-container">
+          <table class="ledger-table" aria-label="Batches and fee schedule">
+            <thead>
+              <tr>
+                <th scope="col">Class &amp; Board</th>
+                <th scope="col">Subject Focus</th>
+                <th scope="col">Batch Timing</th>
+                <th scope="col">Fees / Month</th>
+                <th scope="col">Batch Status</th>
+                <th scope="col">Enquiry</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="class-tag">Class 10</span>
+                  <span class="board-badge">CBSE Board</span>
+                </td>
+                <td>Maths &amp; Science (Physics, Chem, Bio)</td>
+                <td>Mon, Wed, Fri &bull; 7:00 AM &ndash; 8:30 AM</td>
+                <td><span class="batch-fee">Rs. 3,200</span></td>
+                <td><span class="seats-pill urgent">3 seats left</span></td>
+                <td><a href="#enquiry" class="table-link select-batch-btn" data-batch="Class 10 CBSE (Morning 7-8:30 AM)">Enquire &rarr;</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="class-tag">Class 10</span>
+                  <span class="board-badge">Maharashtra State Board</span>
+                </td>
+                <td>Maths &amp; Science (Eng / Semi-English)</td>
+                <td>Tue, Thu, Sat &bull; 5:00 PM &ndash; 6:30 PM</td>
+                <td><span class="batch-fee">Rs. 2,900</span></td>
+                <td><span class="seats-pill urgent">2 seats left</span></td>
+                <td><a href="#enquiry" class="table-link select-batch-btn" data-batch="Class 10 State Board (Evening 5-6:30 PM)">Enquire &rarr;</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="class-tag">Class 9</span>
+                  <span class="board-badge">CBSE Board</span>
+                </td>
+                <td>Maths &amp; Science Foundation</td>
+                <td>Mon, Wed, Fri &bull; 5:00 PM &ndash; 6:30 PM</td>
+                <td><span class="batch-fee">Rs. 2,800</span></td>
+                <td><span class="seats-pill">4 seats left</span></td>
+                <td><a href="#enquiry" class="table-link select-batch-btn" data-batch="Class 9 CBSE (Evening 5-6:30 PM)">Enquire &rarr;</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="class-tag">Class 9</span>
+                  <span class="board-badge">Maharashtra State Board</span>
+                </td>
+                <td>Maths &amp; Science Foundation</td>
+                <td>Tue, Thu, Sat &bull; 6:45 PM &ndash; 8:15 PM</td>
+                <td><span class="batch-fee">Rs. 2,600</span></td>
+                <td><span class="seats-pill full">Full &bull; Waitlist only</span></td>
+                <td><a href="#enquiry" class="table-link select-batch-btn" data-batch="Class 9 State Board (Evening 6:45-8:15 PM)">Join Waitlist &rarr;</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="class-tag">Class 8</span>
+                  <span class="board-badge">CBSE / State Board</span>
+                </td>
+                <td>Fundamental Maths &amp; Science Concepts</td>
+                <td>Mon to Thu &bull; 6:45 PM &ndash; 7:45 PM</td>
+                <td><span class="batch-fee">Rs. 2,400</span></td>
+                <td><span class="seats-pill">5 seats left</span></td>
+                <td><a href="#enquiry" class="table-link select-batch-btn" data-batch="Class 8 Foundation (Mon-Thu 6:45-7:45 PM)">Enquire &rarr;</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="table-footnote">
+            <span>&bull; Monthly fees include all printed formula sheets, chapter revision booklets, and Sunday test answer copies.</span>
+            <span>&bull; No admission or registration fee.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RESULTS -->
+    <section class="results-section fade-in-on-scroll" id="results">
+      <div class="container">
+        <div class="results-header-row">
+          <div>
+            <span class="section-num">&sect; 03 &bull; Verified Track Record</span>
+            <h2 class="section-title">Consistent marks, batch after batch.</h2>
+            <p class="section-subtext">
+              We focus on building fundamentals so marks are a natural outcome, not an accident.
+            </p>
+          </div>
+
+          <!-- Stamped badge -->
+          <div class="stamp-badge" role="note" aria-label="Batch result stamp badge">
+            <span class="stamp-badge-title">&star; CLASS OF 2025 &star;</span>
+            <span class="stamp-badge-sub">KOTHRUD CENTRE &bull; 92% AVERAGE</span>
+            <span class="sample-badge-tag">Sample Data</span>
+          </div>
+        </div>
+
+        <!-- 3 Stats figures in massive serif -->
+        <div class="stats-ledger">
+          <div class="stat-cell">
+            <div class="stat-number">92.4%</div>
+            <div class="stat-label">Batch average in Class 10 Boards</div>
+            <div class="stat-sub">Across all 42 students in the 2025 board exam batch.</div>
+          </div>
+
+          <div class="stat-cell">
+            <div class="stat-number">18</div>
+            <div class="stat-label">Scored 95+ in Maths or Science</div>
+            <div class="stat-sub">Demonstrating thorough command of board-pattern numericals.</div>
+          </div>
+
+          <div class="stat-cell">
+            <div class="stat-number">14 yrs</div>
+            <div class="stat-label">Consecutive first-class passes</div>
+            <div class="stat-sub">Zero failures since our very first batch in 2011.</div>
+          </div>
+        </div>
+
+        <!-- 3 Short quotes (Marked as Sample Data, asymmetrical layout) -->
+        <div class="quotes-asymmetry">
+          <article class="quote-lead">
+            <div>
+              <span class="sample-badge-tag">Sample Parent Quote</span>
+              <p class="quote-lead-text">
+                &ldquo;My daughter used to get nervous before geometry theorem questions. Within two months of personal checking at SnoYC, she started solving circle riders on her own. Her marks jumped from 64 to 91 in the finals.&rdquo;
+              </p>
+            </div>
+            <div class="quote-attribution">
+              <strong>Mrs. Aparna Deshmukh</strong>
+              Parent of Tanvi (Class 10 CBSE, Millennium National School, Karve Nagar)
+            </div>
+          </article>
+
+          <div class="quote-stack">
+            <article class="quote-small">
+              <span class="sample-badge-tag">Sample Student Quote</span>
+              <p class="quote-small-text">
+                &ldquo;Sir doesn&rsquo;t let you copy steps from a guide. You have to explain why you used that particular formula. That made all the difference in my Class 10 board paper.&rdquo;
+              </p>
+              <div class="quote-attribution">
+                <strong>Rohan Gokhale</strong>
+                Scored 96% in Boards (Now at Fergusson College, Pune)
+              </div>
+            </article>
+
+            <article class="quote-small">
+              <span class="sample-badge-tag">Sample Parent Quote</span>
+              <p class="quote-small-text">
+                &ldquo;No empty promises, no tablet games. Just regular homework checking and test copies sent home on Wednesdays. Exactly what a sincere student needs.&rdquo;
+              </p>
+              <div class="quote-attribution">
+                <strong>Milind Joshi</strong>
+                Parent of Advait (Class 9 State Board, Balshikshan Mandir, Kothrud)
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MEET THE TEACHER -->
+    <section class="teacher-section fade-in-on-scroll" id="teacher">
+      <div class="container teacher-grid">
+        <div class="teacher-frame">
+          <figure class="teacher-photo-frame">
+            <div class="teacher-img-wrapper">
+              <img src="teacher.jpg" alt="Sachin G. Kulkarni conducting interactive classroom lecture at SnoYC Classes, Kothrud" class="teacher-actual-img" width="600" height="375" loading="lazy">
+              <span class="photo-stamp-overlay">Head Teacher &bull; Sachin Sir</span>
+            </div>
+            <figcaption class="teacher-photo-caption">
+              <strong>Classroom Lecture:</strong> Sachin Sir explaining physics concepts and clearing student doubts at our Karve Road centre.
+            </figcaption>
+          </figure>
+
+          <aside class="teacher-note">
+            &ldquo;Teaching is a craft, not a franchise. I personally teach every lecture and grade every test.&rdquo;
+          </aside>
+        </div>
+
+        <div class="teacher-profile">
+          <span class="section-num">&sect; 04 &bull; Founder &amp; Head Teacher</span>
+          <h2>Sachin G. Kulkarni</h2>
+          <span class="teacher-role">M.Sc. (Physics), B.Ed. &bull; 14 Years Teaching in Kothrud</span>
+
+          <p class="teacher-bio">
+            I started SnoYC Classes in 2011 after seven years of teaching at junior colleges in Pune. Over the years, I noticed that students don&rsquo;t struggle because they lack intelligence &mdash; they struggle because nobody takes the time to look at where their pencil stops on a numerical.
+          </p>
+
+          <p class="teacher-bio">
+            When you join SnoYC, there are no substitute tutors, no recorded video screens, and no rotating college students. I take every class myself. My home is in Kothrud, my own children study in schools here, and my reputation in this neighborhood is built on one simple thing: whether your child truly understands the subject.
+          </p>
+
+          <div class="teacher-credentials">
+            <div>
+              <div class="cred-item-title">Qualifications</div>
+              <div class="cred-item-value">M.Sc. (Physics), Pune University<br>B.Sc. (Physics), Fergusson College</div>
+            </div>
+            <div>
+              <div class="cred-item-title">Teaching Experience</div>
+              <div class="cred-item-value">14+ Years (CBSE &amp; State Board)<br>Over 680 students mentored</div>
+            </div>
+          </div>
+
+          <a href="#enquiry" class="btn btn-outline">Meet Sachin Sir &mdash; Book a visit &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WEEKLY TIMETABLE -->
+    <section class="timetable-section fade-in-on-scroll" id="timetable">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">&sect; 05 &bull; Real Timetable Ledger</span>
+          <h2 class="section-title">Weekly classroom schedule</h2>
+          <p class="section-subtext">
+            Designed like a traditional school ledger. Balanced hours ensure school work and self-study are never compromised.
+          </p>
+        </div>
+
+        <div class="timetable-wrapper">
+          <table class="timetable-table" aria-label="Weekly class schedule">
+            <thead>
+              <tr>
+                <th scope="col">Time Slot</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+                <th scope="col">Saturday</th>
+                <th scope="col">Sunday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Morning</strong><br><small>7:00 &ndash; 8:30 AM</small></td>
+                <td>
+                  <span class="tt-subject">Class 10 CBSE</span>
+                  <span class="tt-badge">Maths (Algebra)</span>
+                </td>
+                <td>&mdash;</td>
+                <td>
+                  <span class="tt-subject">Class 10 CBSE</span>
+                  <span class="tt-badge">Science (Physics)</span>
+                </td>
+                <td>&mdash;</td>
+                <td>
+                  <span class="tt-subject">Class 10 CBSE</span>
+                  <span class="tt-badge">Maths (Trig / Geom)</span>
+                </td>
+                <td>&mdash;</td>
+                <td rowspan="3" class="tt-special">
+                  <span class="tt-subject" style="color: var(--accent);">Board Pattern Test Series</span>
+                  <small style="display:block; margin-top:4px;">8:30 AM &ndash; 11:30 AM</small>
+                  <span class="tt-badge" style="background:#fff;">Full Length Written Exam</span>
+                  <div style="margin-top: 10px; font-size: 0.75rem; color: var(--ink-secondary);">
+                    11:30 AM &ndash; 1:00 PM<br>One-on-One Doubt Clinic
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Evening 1</strong><br><small>5:00 &ndash; 6:30 PM</small></td>
+                <td>
+                  <span class="tt-subject">Class 9 CBSE</span>
+                  <span class="tt-badge">Maths</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 10 State</span>
+                  <span class="tt-badge">Maths Part 1</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 9 CBSE</span>
+                  <span class="tt-badge">Science (Chem)</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 10 State</span>
+                  <span class="tt-badge">Science 1</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 9 CBSE</span>
+                  <span class="tt-badge">Maths (Geom)</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 10 State</span>
+                  <span class="tt-badge">Maths Part 2</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td><strong>Evening 2</strong><br><small>6:45 &ndash; 8:15 PM</small></td>
+                <td>
+                  <span class="tt-subject">Class 8 Foundation</span>
+                  <span class="tt-badge">Maths</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 9 State</span>
+                  <span class="tt-badge">Maths Part 1</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 8 Foundation</span>
+                  <span class="tt-badge">Science</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 9 State</span>
+                  <span class="tt-badge">Science</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 8 Foundation</span>
+                  <span class="tt-badge">Problem Solving</span>
+                </td>
+                <td>
+                  <span class="tt-subject">Class 9 State</span>
+                  <span class="tt-badge">Maths Part 2</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="timetable-notes">
+            <span>&bull; Strict punctuality: Classroom doors close 5 minutes after batch start time.</span>
+            <span>&bull; Sunday test copies are returned with individual corrections every Wednesday evening.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ (5 REAL QUESTIONS) -->
+    <section class="faq-section fade-in-on-scroll" id="faq">
+      <div class="container faq-layout">
+        <div>
+          <span class="section-num">&sect; 06 &bull; Clear Answers</span>
+          <h2 class="section-title">Frequently asked questions.</h2>
+          <p class="section-subtext">
+            Straightforward answers for parents evaluating coaching for the upcoming academic year.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <!-- Q1: Fees -->
+          <details class="faq-item" open>
+            <summary class="faq-summary">
+              <span>What is your fee structure, and are there extra charges for tests or materials?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Fees range from Rs. 2,400 to Rs. 3,200 per month depending on the student&rsquo;s class (Class 8 to 10). There are zero hidden charges: all printed chapter revision notes, formula sheets, weekly Sunday test papers, and model answer copies are included in the monthly fee.
+              </p>
+              <p>
+                Fees are payable on a monthly basis by the 7th of each calendar month. We do not demand whole-year upfront payments.
+              </p>
+            </div>
+          </details>
+
+          <!-- Q2: Batch size -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>How strictly do you enforce the 15-student limit per batch?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Strictly 15 students. Our classroom has exactly 15 wooden study chairs around the main desk. Once the 15th seat is filled, admissions for that batch close immediately and subsequent applicants are placed on our waitlist.
+              </p>
+              <p>
+                We have refused requests from friends and relatives to add &ldquo;just one more seat&rdquo; every single year since 2011.
+              </p>
+            </div>
+          </details>
+
+          <!-- Q3: Demo class -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>Can my child attend a free trial or demo class before enrolling?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Yes. Every prospective student is invited to attend two full trial classes with the running batch. They will solve problems on the board with other students, receive the homework sheet, and get a clear sense of our teaching style.
+              </p>
+              <p>
+                You only pay fees if both the student and parent feel comfortable continuing after the demo.
+              </p>
+            </div>
+          </details>
+
+          <!-- Q4: Missed classes -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>What happens if a student misses a class due to illness or school functions?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                We do not use pre-recorded generic video apps. If a student misses a lecture with prior notice, they attend our Saturday evening or Sunday morning doubt clinic where Sachin Sir sits down with them one-on-one to review the missed concepts and numericals.
+              </p>
+            </div>
+          </details>
+
+          <!-- Q5: Test schedule -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>How often are tests conducted, and how do parents stay informed?</span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Full-length chapter tests happen every alternate Sunday from 8:30 AM to 11:30 AM. Tests follow the official board question paper blueprint (CBSE / State Board).
+              </p>
+              <p>
+                Evaluated answer sheets with red pen markings and step scores are returned directly to the student on Wednesday. Marks and attendance updates are messaged to parents via WhatsApp the same day.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ENQUIRY & LOCATION -->
+    <section class="enquiry-section fade-in-on-scroll" id="enquiry">
+      <div class="container enquiry-grid">
+        <!-- Form -->
+        <div class="enquiry-card">
+          <span class="section-num">&sect; 07 &bull; Admissions Open</span>
+          <h2 class="section-title" style="font-size: 2rem; margin-bottom: 0.5rem;">Book a free demo class</h2>
+          <p class="section-subtext" style="font-size: 1rem; margin-bottom: 1.75rem;">
+            Fill in your details below. We will confirm your child's 2-day demo class via WhatsApp or phone call within 4 working hours.
+          </p>
+
+          <form id="enquiryForm" onsubmit="handleEnquirySubmit(event)">
+            <div class="form-group">
+              <label for="studentName" class="form-label">Student&rsquo;s Full Name</label>
+              <input type="text" id="studentName" class="form-input" placeholder="e.g. Advait Joshi" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="studentClass" class="form-label">Current Class &amp; Board</label>
+                <select id="studentClass" class="form-select" required>
+                  <option value="" disabled selected>Select class</option>
+                  <option value="Class 10 CBSE">Class 10 CBSE</option>
+                  <option value="Class 10 State Board">Class 10 Maharashtra State</option>
+                  <option value="Class 9 CBSE">Class 9 CBSE</option>
+                  <option value="Class 9 State Board">Class 9 Maharashtra State</option>
+                  <option value="Class 8 Foundation">Class 8 Foundation</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="parentPhone" class="form-label">WhatsApp Contact Number</label>
+                <input type="tel" id="parentPhone" class="form-input" placeholder="e.g. 98220 12345" pattern="[0-9]{10}" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredBatch" class="form-label">Preferred Batch Timing</label>
+              <select id="preferredBatch" class="form-select" required>
+                <option value="" disabled selected>Select batch slot</option>
+                <option value="Morning 7:00 AM - 8:30 AM">Morning (7:00 AM &ndash; 8:30 AM)</option>
+                <option value="Evening 5:00 PM - 6:30 PM">Evening Slot 1 (5:00 PM &ndash; 6:30 PM)</option>
+                <option value="Evening 6:45 PM - 8:15 PM">Evening Slot 2 (6:45 PM &ndash; 8:15 PM)</option>
+                <option value="Open to any slot">Any available slot</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="specificConcern" class="form-label">Any specific subject weakness? (Optional)</label>
+              <textarea id="specificConcern" class="form-textarea" rows="2" placeholder="e.g. Struggling with Class 9 Physics numericals or Class 10 Trigonometry"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-big-wa" id="submitWaBtn">
+                Send Enquiry via WhatsApp &rarr;
+              </button>
+              <p class="form-hint">Opens WhatsApp with your pre-filled inquiry. You can edit before sending.</p>
+            </div>
+          </form>
+        </div>
+
+        <!-- Location & Timings -->
+        <div class="location-box">
+          <div class="location-details">
+            <div class="location-item">
+              <span class="loc-label">Institute Address</span>
+              <p class="loc-text">
+                <strong>SnoYC Classes</strong><br>
+                2nd Floor, Omkar Heights,<br>
+                Opposite City Pride / Near Karve Putla,<br>
+                Karve Road, Kothrud, Pune &ndash; 411038
+              </p>
+              <p style="font-size: 0.875rem; color: var(--ink-secondary); margin-top: 0.35rem;">
+                Landmark: 3 minutes walking distance from Kothrud Bus Stand.
+              </p>
+            </div>
+
+            <div class="location-item">
+              <span class="loc-label">Classroom &amp; Office Timings</span>
+              <p class="loc-text">
+                <strong>Monday to Saturday:</strong> 7:00 AM &ndash; 8:00 PM<br>
+                <strong>Sunday:</strong> 8:30 AM &ndash; 1:00 PM (Tests &amp; Parent Consultations)
+              </p>
+            </div>
+
+            <div class="location-item">
+              <span class="loc-label">Direct Contact</span>
+              <p class="loc-text">
+                WhatsApp / Call: <strong>+91 98220 12345</strong><br>
+                Office Landline: <strong>020 2543 8910</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Map Container -->
+          <div class="map-card-wrapper">
+            <div class="map-header">
+              <div class="map-title-row">
+                <span class="map-badge">Demo Location</span>
+                <span class="map-address-title">Karve Road, Kothrud, Pune</span>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Karve+Road+Kothrud+Pune" target="_blank" rel="noopener noreferrer" class="map-directions-btn">
+                Open in Maps &rarr;
+              </a>
+            </div>
+            <div class="map-iframe-container">
+              <iframe 
+                title="SnoYC Classes Location Map"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=73.8130%2C18.4970%2C73.8290%2C18.5120&amp;layer=mapnik&amp;marker=18.5048%2C73.8202" 
+                class="map-iframe"
+                loading="lazy">
+              </iframe>
+            </div>
+            <div class="map-footer-caption">
+              <span><strong>Landmark:</strong> Near Karve Putla, 3 min walk from Kothrud Bus Stand</span>
+              <span class="map-coords">18.5048&deg; N, 73.8202&deg; E</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">SnoYC Classes</div>
+          <p style="margin-bottom: 0.75rem; line-height: 1.5;">
+            Local tuition for Class 8, 9 &amp; 10 Maths and Science (CBSE &amp; Maharashtra State Board).
+          </p>
+          <p style="font-size: 0.875rem; color: var(--ink-tertiary);">
+            2nd Floor, Omkar Heights, Karve Road, Kothrud, Pune 411038.<br>
+            Direct contact: +91 98220 12345 &bull; Mon&ndash;Sat 7 AM&ndash;8 PM
+          </p>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-serif); font-weight: 700; color: var(--ink-primary); margin-bottom: 0.75rem;">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#why-us">Why Parents Choose Us</a></li>
+            <li><a href="#batches">Courses &amp; Monthly Fees</a></li>
+            <li><a href="#results">Board Results (Class of 2025)</a></li>
+            <li><a href="#teacher">Meet Sachin Sir</a></li>
+            <li><a href="#timetable">Weekly Timetable</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-family: var(--font-serif); font-weight: 700; color: var(--ink-primary); margin-bottom: 0.75rem;">Admissions Notice</div>
+          <p style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 0.5rem;">
+            Admissions for the 2026&ndash;27 academic year are open on a first-come, first-served basis. Every batch is strictly limited to 15 students.
+          </p>
+          <div class="sample-disclaimer">
+            <strong>Sample Website for Client Demonstration:</strong> This page is designed as a bespoke presentation prototype for local coaching institute pitches by SnoYC.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 SnoYC Classes, Kothrud, Pune. All rights reserved.
+        </div>
+        <div class="agency-credit">
+          Website designed by <a href="https://snoyc.com" target="_blank" rel="noopener noreferrer">SnoYC</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MINIMAL JAVASCRIPT: ACCESSIBILITY, FORM TO WHATSAPP & SCROLL OBSERVER -->
+  <script>
+    // 1. Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('mainNavLinks');
+
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('mobile-open');
+        menuBtn.innerHTML = !isExpanded ? 'Close &times;' : 'Menu &darr;';
+      });
+
+      // Close menu when a link is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('mobile-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.innerHTML = 'Menu &darr;';
+        });
+      });
+    }
+
+    // 2. Auto-select batch from Courses & Batches table click
+    document.querySelectorAll('.select-batch-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const batchName = btn.getAttribute('data-batch');
+        const batchSelect = document.getElementById('preferredBatch');
+        const classSelect = document.getElementById('studentClass');
+
+        if (batchName) {
+          if (batchName.includes('Morning')) {
+            if (batchSelect) batchSelect.value = 'Morning 7:00 AM - 8:30 AM';
+          } else if (batchName.includes('5-6:30')) {
+            if (batchSelect) batchSelect.value = 'Evening 5:00 PM - 6:30 PM';
+          } else if (batchName.includes('6:45')) {
+            if (batchSelect) batchSelect.value = 'Evening 6:45 PM - 8:15 PM';
+          }
+
+          if (batchName.includes('Class 10 CBSE') && classSelect) classSelect.value = 'Class 10 CBSE';
+          if (batchName.includes('Class 10 State') && classSelect) classSelect.value = 'Class 10 State Board';
+          if (batchName.includes('Class 9 CBSE') && classSelect) classSelect.value = 'Class 9 CBSE';
+          if (batchName.includes('Class 9 State') && classSelect) classSelect.value = 'Class 9 State Board';
+          if (batchName.includes('Class 8') && classSelect) classSelect.value = 'Class 8 Foundation';
+        }
+      });
+    });
+
+    // 3. Enquiry form submit handler -> Prepares dynamic WhatsApp link
+    function handleEnquirySubmit(event) {
+      event.preventDefault();
+      
+      const studentName = document.getElementById('studentName').value.trim();
+      const studentClass = document.getElementById('studentClass').value;
+      const parentPhone = document.getElementById('parentPhone').value.trim();
+      const preferredBatch = document.getElementById('preferredBatch').value;
+      const specificConcern = document.getElementById('specificConcern').value.trim();
+
+      let message = `Hello Sachin Sir, I would like to book a free demo class at SnoYC Classes, Kothrud.\n\n` +
+                    `• Student Name: ${studentName}\n` +
+                    `• Class & Board: ${studentClass}\n` +
+                    `• Parent Phone: ${parentPhone}\n` +
+                    `• Preferred Batch: ${preferredBatch}`;
+
+      if (specificConcern) {
+        message += `\n• Specific Note / Concern: ${specificConcern}`;
+      }
+
+      const encodedMsg = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/919822012345?text=${encodedMsg}`;
+
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // 4. Subtle scroll reveal (minimal, non-jarring, progressive enhancement)
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.body.classList.add('js-observer-ready');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: '100px 0px 100px 0px'
+      });
+
+      document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 80) {
+          el.classList.add('is-visible');
+        } else {
+          observer.observe(el);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
